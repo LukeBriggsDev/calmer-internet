@@ -23,6 +23,7 @@ function cleanup(){
     // Twitter
     function removeTwitterElements(){
         console.log("TWITTER");
+        var homeLinks = "a[href='/home']";
         var trendingBar = "div[aria-label='Timeline: Trending now']";
         var exploreLinks = "a[href='/explore']";
         var whoToFollow = "aside[aria-label='Who to follow']"
