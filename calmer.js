@@ -31,8 +31,8 @@ function cleanup(){
         var twitterElementsToRemove = document.querySelectorAll(`${exploreLinks}, ${homeLinks},${trendingBar}, ${whoToFollow}, ${topics}`);
         twitterElementsToRemove.forEach(element => element.remove());
         
-        // Remove styled box
-        var twitterClassesToRemove = document.getElementsByClassName("css-1dbjc4n r-x572qd r-1d6w8o1 r-1867qdf r-1phboty r-rs99b7 r-1ifxtd0 r-1bro5k0 r-1udh08x");
+        // Remove styled box that is left behind after deleting 'who to follow'
+        var twitterClassesToRemove = document.getElementsByClassName("css-1dbjc4n r-1867qdf r-1phboty r-rs99b7 r-1ifxtd0 r-1bro5k0 r-1udh08x");
         for(element of twitterClassesToRemove){
             element.remove();
         }  
