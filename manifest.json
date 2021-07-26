@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Calmer Internet",
+    "version": "1",
+    "icons": {
+    },
+    "description": "Provides a calmer internet experience",
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["calmer.js"]
+      }
+    ]
+  }
