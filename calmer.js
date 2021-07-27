@@ -23,12 +23,11 @@ function cleanup(){
     // Twitter
     function removeTwitterElements(){
         console.log("TWITTER");
-        var homeLinks = "a[href='/home']";
         var trendingBar = "div[aria-label='Timeline: Trending now']";
         var exploreLinks = "a[href='/explore']";
         var whoToFollow = "aside[aria-label='Who to follow']"
         var topics = 'div[aria-label="Timeline: "]'
-        var twitterElementsToRemove = document.querySelectorAll(`${exploreLinks}, ${homeLinks},${trendingBar}, ${whoToFollow}, ${topics}`);
+        var twitterElementsToRemove = document.querySelectorAll(`${exploreLinks}, ${trendingBar}, ${whoToFollow}, ${topics}`);
         twitterElementsToRemove.forEach(element => element.remove());
         
         // Remove styled box that is left behind after deleting 'who to follow'
