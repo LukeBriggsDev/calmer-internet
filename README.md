@@ -1,3 +1,4 @@
+![banner](/icons/banner_1920x640.png)
 # calmer-internet
 A web extension that hides the elements of web pages that are best off hidden
 
