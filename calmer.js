@@ -12,7 +12,8 @@ function getElementsToRemove(){
                 "homeLinks": document.querySelectorAll("a[href='/']"),
                 "exploreLinks": document.querySelectorAll("a[href='/feed/explore']"),
                 "mobileTrending": document.getElementsByClassName("pivot-trending"),
-                "comments": document.getElementsByClassName("ytd-comments") 
+                "comments": document.getElementsByClassName("ytd-comments"),
+                "watchNext": document.getElementsByClassName("ytd-watch-next-secondary-results-renderer")
             }
         }
     }
