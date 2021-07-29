@@ -3,11 +3,17 @@
     "name": "Calmer Internet",
     "version": "1",
     "icons": {
+      "48": "icons/48.png",
+      "96": "icons/96.png"
     },
     "description": "Provides a calmer internet experience",
     "content_scripts": [
       {
-        "matches": ["<all_urls>"],
+        "matches": [
+          "*://*.youtube.com/*", 
+          "*://*.twitter.com/*", "*://twitter.com/*", 
+          "*://*.instagram.com/*"
+        ],
         "js": ["calmer.js"]
       }
     ]
