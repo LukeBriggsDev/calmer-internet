@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Calmer Internet",
-    "version": "1",
+    "version": "1.0.0",
     "icons": {
       "48": "icons/48.png",
       "96": "icons/96.png"
