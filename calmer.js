@@ -81,7 +81,6 @@ function getElementsToRemove(){
             for(element of document.getElementsByClassName("r8ZrO")){
                 feedComments.push(element.parentElement.parentElement);
             }
-            console.log(feedComments);
             elementsToRemove["feedComments"] = feedComments;
         }
         catch(e){
