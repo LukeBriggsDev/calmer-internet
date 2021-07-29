@@ -32,6 +32,12 @@ function getElementsToRemove(){
                 "watchNextMobile": document.querySelectorAll("ytm-item-section-renderer[section-identifier='related-items']")
             }
 
+            console.log(document.getElementsByClassName("ytd-playlist-panel-renderer").length)
+            // Remove right panel when not in a playlist
+            if (!IS_MOBILE && !window.location.href.includes("&list")){
+                elementsToRemove["rightPanel"] = [document.getElementById("secondary")]
+            }
+
             // Elements that might throw undefined errors
             try{
             elementsToRemove["homeMobile"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-w2w")[0].parentElement]
