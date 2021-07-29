@@ -1,48 +1,41 @@
 console.log("LOADED CALMER INTERNET ON " + window.location.hostname);
-function cleanup(){
-    // YouTube
-    function removeYouTubeElements(){
-        var homeLinks = "a[href='/']";
-        var exploreLinks = "a[href='/feed/explore']";
-        var mobileTrending = document.getElementsByClassName("pivot-trending")
-        var comments = document.getElementsByClassName("ytd-comments")
-        var youtubeElementsToRemove = document.querySelectorAll(`${homeLinks}, ${exploreLinks}`);
-        youtubeElementsToRemove.forEach(element => element.remove());
-        for(element of comments){element.remove();}
-        for(element of mobileTrending){element.parentElement.remove();}  
-    }
 
-    if (window.location.hostname == "www.youtube.com" || window.location.hostname == "m.youtube.com"){
-        observeBody(removeYouTubeElements);
-    }
-    console.log(window.location.href);
+function getElementsToRemove(){
+    var elementsToRemove; 
+    // YouTube
     if (window.location.href == "https://www.youtube.com/" || window.location.href == "https://m.youtube.com/"){
         window.location.replace("http://youtube.com/feed/subscriptions/");
     }
-
-    // Twitter
-    function removeTwitterElements(){
-        console.log("TWITTER");
-        var trendingBar = "div[aria-label='Timeline: Trending now']";
-        var exploreLinks = "a[href='/explore']";
-        var whoToFollow = "aside[aria-label='Who to follow']"
-        var topics = 'div[aria-label="Timeline: "]'
-        var twitterElementsToRemove = document.querySelectorAll(`${exploreLinks}, ${trendingBar}, ${whoToFollow}, ${topics}`);
-        twitterElementsToRemove.forEach(element => element.remove());
-        
-        // Remove styled box that is left behind after deleting 'who to follow'
-        var twitterClassesToRemove = document.getElementsByClassName("css-1dbjc4n r-1867qdf r-1phboty r-rs99b7 r-1ifxtd0 r-1bro5k0 r-1udh08x");
-        for(element of twitterClassesToRemove){
-            element.remove();
-        }  
+    else{
+        if (window.location.hostname == "www.youtube.com" || window.location.hostname == "m.youtube.com"){
+            elementsToRemove = {
+                "homeLinks": document.querySelectorAll("a[href='/']"),
+                "exploreLinks": document.querySelectorAll("a[href='/feed/explore']"),
+                "mobileTrending": document.getElementsByClassName("pivot-trending"),
+                "comments": document.getElementsByClassName("ytd-comments") 
+            }
+        }
     }
 
+    //Twitter
     if (window.location.hostname == "twitter.com" || window.location.hostname == "mobile.twitter.com"){
-        observeBody(removeTwitterElements)
+        elementsToRemove = {
+            "trendingBar": document.querySelectorAll("div[aria-label='Timeline: Trending now']"),
+            "exploreLinks": document.querySelectorAll("a[href='/explore']"),
+            "whoToFollow": document.querySelectorAll("aside[aria-label='Who to follow']"),
+            "topics": document.querySelectorAll("div[aria-label='Timeline: ']"),
+            "miscStyling": document.getElementsByClassName("css-1dbjc4n r-1867qdf r-1phboty r-rs99b7 r-1ifxtd0 r-1bro5k0 r-1udh08x")
+        }
     }
+    
+    return elementsToRemove;
+
+}
+function main(){
+    observeBodyRemove();
 
 
-    function observeBody(action){
+    function observeBodyRemove(){
         // Select the node that will be observed for mutations
         var targetNode = document.querySelector('body');
 
@@ -51,7 +44,12 @@ function cleanup(){
 
         // Callback function to execute when mutations are observed
         const callback = function(mutationsList, observer) {
-            action();
+            elementsToRemove = getElementsToRemove();
+            for(key in elementsToRemove){
+                for (element of elementsToRemove[key]){
+                    element.remove();
+                }
+            }
         };
 
         // Create an observer instance linked to the callback function
@@ -63,5 +61,5 @@ function cleanup(){
 
 }
 
-cleanup()
+main()
 
