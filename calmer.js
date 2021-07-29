@@ -8,12 +8,14 @@ function getElementsToRemove(){
     }
     else{
         if (window.location.hostname == "www.youtube.com" || window.location.hostname == "m.youtube.com"){
+            console.log(document.getElementsByClassName("ytm-item-section-renderer"))
             elementsToRemove = {
                 "homeLinks": document.querySelectorAll("a[href='/']"),
                 "exploreLinks": document.querySelectorAll("a[href='/feed/explore']"),
                 "mobileTrending": document.getElementsByClassName("pivot-trending"),
                 "comments": document.getElementsByClassName("ytd-comments"),
-                "watchNext": document.getElementsByClassName("ytd-watch-next-secondary-results-renderer")
+                "watchNext": document.getElementsByClassName("ytd-watch-next-secondary-results-renderer"),
+                "watchNextMobile": document.getElementsByTagName("ytm-item-section-renderer")
             }
         }
     }
