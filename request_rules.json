@@ -1,0 +1,20 @@
+[
+  {
+    "id" : 1,
+    "priority": 1,
+    "action" : { "type" : "redirect", "redirect": { "url": "https://www.youtube.com/feed/subscriptions" } },
+    "condition" : {
+      "urlFilter" : "*://www.youtube.com/",
+      "resourceTypes" : ["main_frame"]
+    }
+  },
+  {
+    "id" : 2,
+    "priority": 1,
+    "action" : { "type" : "redirect", "redirect": { "url": "https://m.youtube.com/feed/subscriptions" } },
+    "condition" : {
+      "urlFilter" : "*://m.youtube.com/",
+      "resourceTypes" : ["main_frame"]
+    }
+  }
+]

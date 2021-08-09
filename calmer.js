@@ -11,35 +11,23 @@ function getElementsToRemove(){
         else{
             var IS_MOBILE = false
         }
-        // Redirect on homepage
-        if (window.location.href == "https://www.youtube.com/" || window.location.href == "https://m.youtube.com/"){
-
-            if (IS_MOBILE){
-                window.location.replace("http://m.youtube.com/feed/subscriptions/");
-            }
-            else{
-                window.location.replace("http://www.youtube.com/feed/subscriptions/");
-            }
+            
+        elementsToRemove = {
+            "homeLinks": document.querySelectorAll("a[href='/']"),
+            "exploreLinks": document.querySelectorAll("a[href='/feed/explore']"),
+            "comments": document.getElementsByClassName("ytd-comments"),
+            "commentsMobile": document.getElementsByTagName("ytm-comments-entry-point-header-renderer"),
+            "watchNext": document.getElementsByClassName("ytd-watch-next-secondary-results-renderer"),
+            "watchNextMobile": document.querySelectorAll("ytm-item-section-renderer[section-identifier='related-items']")
         }
-        else {
-            
-            elementsToRemove = {
-                "homeLinks": document.querySelectorAll("a[href='/']"),
-                "exploreLinks": document.querySelectorAll("a[href='/feed/explore']"),
-                "comments": document.getElementsByClassName("ytd-comments"),
-                "commentsMobile": document.getElementsByTagName("ytm-comments-entry-point-header-renderer"),
-                "watchNext": document.getElementsByClassName("ytd-watch-next-secondary-results-renderer"),
-                "watchNextMobile": document.querySelectorAll("ytm-item-section-renderer[section-identifier='related-items']")
-            }
 
-            // Elements that might throw undefined errors
-            try{
-            elementsToRemove["homeMobile"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-w2w")[0].parentElement]
-            elementsToRemove["trendingMobile"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-trending")[0].parentElement]
-            }
-            catch(e){
-            
-            }
+        // Elements that might throw undefined errors
+        try{
+        elementsToRemove["homeMobile"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-w2w")[0].parentElement]
+        elementsToRemove["trendingMobile"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-trending")[0].parentElement]
+        }
+        catch(e){
+
         }
     }
 
