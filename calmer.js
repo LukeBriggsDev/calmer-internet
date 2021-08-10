@@ -18,13 +18,13 @@ function getElementsToRemove(){
             "comments": document.getElementsByClassName("ytd-comments"),
             "commentsMobile": document.getElementsByTagName("ytm-comments-entry-point-header-renderer"),
             "watchNext": document.getElementsByClassName("ytd-watch-next-secondary-results-renderer"),
-            "watchNextMobile": document.querySelectorAll("ytm-item-section-renderer[section-identifier='related-items']")
+            "watchNextMobile": document.querySelectorAll("ytm-item-section-renderer[section-identifier='related-items']"),
+            "liveChat": document.getElementsByTagName("ytd-live-chat-frame"),
         }
-
         // Elements that might throw undefined errors
         try{
-        elementsToRemove["homeMobile"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-w2w")[0].parentElement]
-        elementsToRemove["trendingMobile"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-trending")[0].parentElement]
+            elementsToRemove["homeMobile"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-w2w")[0].parentElement]
+            elementsToRemove["trendingMobile"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-trending")[0].parentElement]
         }
         catch(e){
 
@@ -95,7 +95,11 @@ function main(){
             elementsToRemove = getElementsToRemove();
             for(key in elementsToRemove){
                 for (element of elementsToRemove[key]){
-                    element.remove();
+                    try {
+                        element.remove();
+                    }
+                    catch(e){
+                    }
                 }
             }
         };
