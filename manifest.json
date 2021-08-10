@@ -6,19 +6,13 @@
       "48": "icons/48.png",
       "96": "icons/96.png"
     },
-    "declarative_net_request" : {
-      "rule_resources" : [{
-        "id": "ruleset_1",
-        "enabled": true,
-        "path": "request_rules.json"
-      }]
-    },
+    "background": {"scripts":["background.js"]},
     "permissions": [
       "*://*.youtube.com/*",
       "*://*.twitter.com/*", "*://twitter.com/*",
       "*://*.instagram.com/*",
-      "declarativeNetRequest",
-      "declarativeNetRequestFeedback"
+      "webRequest",
+      "webRequestBlocking"
     ],
     "description": "Provides a calmer internet experience",
     "content_scripts": [
