@@ -19,6 +19,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     },
     {
         urls: [
+            "*://twitter.com/explore/*",
             "*://twitter.com/explore"
         ],
         types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "xmlhttprequest", "other"]
