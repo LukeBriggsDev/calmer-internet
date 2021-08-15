@@ -4,7 +4,6 @@ settings = {}
 
 let getting = chrome.storage.sync.get([
     "YTHomeLinks",
-    "YTHomeRedirect",
     "YTExploreLinks",
     "YTComments",
     "YTWatchNext",
@@ -12,7 +11,6 @@ let getting = chrome.storage.sync.get([
 
     "TwitterTrendingBar",
     "TwitterExploreLinks",
-    "TwitterExploreRedirect",
     "TwitterWhoToFollow",
     "TwitterTopics",
 

@@ -17,6 +17,7 @@ function saveOptions(e) {
         InstaComments: document.querySelector("#InstaComments").checked,
         InstaExploreLinks: document.querySelector("#InstaExploreLinks").checked,
         InstaFeedComments: document.querySelector("#InstaFeedComments").checked,
+        InstaExploreRedirect: document.querySelector("#InstaExploreRedirect").checked,
     });
 }
 
@@ -39,6 +40,7 @@ function restoreOptions() {
         document.querySelector("#InstaComments").checked = result.InstaComments;
         document.querySelector("#InstaExploreLinks").checked = result.InstaExploreLinks;
         document.querySelector("#InstaFeedComments").checked = result.InstaFeedComments;
+        document.querySelector("#InstaExploreRedirect").checked = result.InstaExploreRedirect;
     }
 
     function onError(error) {
@@ -61,7 +63,8 @@ function restoreOptions() {
 
         "InstaComments",
         "InstaExploreLinks",
-        "InstaFeedComments"
+        "InstaFeedComments",
+        "InstaExploreRedirect"
         ], setCurrentChoices)
 }
 

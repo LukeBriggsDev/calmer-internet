@@ -1,37 +1,39 @@
 {
-    "manifest_version": 2,
-    "name": "Calmer Internet",
-    "version": "1.0.0",
-    "icons": {
-      "48": "icons/48.png",
-      "96": "icons/96.png"
-    },
-    "background": {"scripts":["background.js"]},
-    "permissions": [
+  "manifest_version": 2,
+  "name": "Calmer Internet",
+  "version": "1.0.0",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "calmerinternet@lukebriggs.dev"
+    }
+  },
+  "icons": {
+    "48": "icons/48.png",
+    "96": "icons/96.png"
+  },
+  "content_scripts": [
+  {
+    "matches": [
       "*://*.youtube.com/*",
       "*://*.twitter.com/*", "*://twitter.com/*",
-      "*://*.instagram.com/*",
-      "storage",
-      "webRequest",
-      "webRequestBlocking"
+      "*://*.instagram.com/*"
     ],
-    "browser_specific_settings": {
-      "gecko": {
-        "id": "calmerinternet@lukebriggs.dev"
-      }
-    },
-    "description": "Provides a calmer internet experience",
-    "content_scripts": [
-      {
-        "matches": [
-          "*://*.youtube.com/*", 
-          "*://*.twitter.com/*", "*://twitter.com/*", 
-          "*://*.instagram.com/*"
-        ],
-        "js": ["calmer.js"]
-      }
-    ],
-    "options_ui": {
-      "page": "options.html"
-    }
+    "js": ["calmer.js"]
+  }
+  ],
+  "background": {
+    "scripts":["background.js"]
+  },
+  "permissions": [
+    "*://*.youtube.com/*",
+    "*://*.twitter.com/*", "*://twitter.com/*",
+    "*://*.instagram.com/*",
+    "storage",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "description": "Provides a calmer internet experience",
+  "options_ui": {
+    "page": "options.html"
+  }
 }
