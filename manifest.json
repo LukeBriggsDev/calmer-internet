@@ -40,7 +40,7 @@
     "webRequest",
     "webRequestBlocking"
   ],
-  "description": "Provides a calmer internet experience",
+  "description": "Provides a calmer internet experience. Removes comments and various recommendation elements from Twitter, YouTube, Instagram.",
   "options_ui": {
     "page": "options.html"
   }
