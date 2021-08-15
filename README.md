@@ -9,6 +9,7 @@ A web extension that hides the elements of web pages that are best off hidden
 - Comments
 - Redirect home page to subscriptions
 - Watch next section
+- Live Chat
 
 ## Twitter elements:
 - Trending bar
@@ -21,6 +22,3 @@ A web extension that hides the elements of web pages that are best off hidden
 - Explore people links
 - Comments below posts in feed
 - Comments in posts
-
-## TODO
-[ ] Add options for user to change what to hide
