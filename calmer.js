@@ -47,7 +47,7 @@ function getElementsToRemove(){
         if(settings["YTHomeLinks"]){
             elementsToRemove["homeLinks"] = document.querySelectorAll("a[href='/']")
         }
-        if(settings["YTexploreLinks"]){
+        if(settings["YTExploreLinks"]){
             elementsToRemove["exploreLinks"] = document.querySelectorAll("a[href='/feed/explore']")
         }
         if(settings["YTComments"]){
