@@ -11,9 +11,15 @@
       "*://*.youtube.com/*",
       "*://*.twitter.com/*", "*://twitter.com/*",
       "*://*.instagram.com/*",
+      "storage",
       "webRequest",
       "webRequestBlocking"
     ],
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "calmerinternet@lukebriggs.dev"
+      }
+    },
     "description": "Provides a calmer internet experience",
     "content_scripts": [
       {
@@ -24,5 +30,8 @@
         ],
         "js": ["calmer.js"]
       }
-    ]
-  }
+    ],
+    "options_ui": {
+      "page": "options.html"
+    }
+}
