@@ -7,6 +7,14 @@
       "id": "calmerinternet@lukebriggs.dev"
     }
   },
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/16.png",
+      "24": "icons/24.png",
+      "32": "icons/32.png"
+    },
+    "default_title": "Calmer Internet"
+  },
   "icons": {
     "48": "icons/48.png",
     "96": "icons/96.png"

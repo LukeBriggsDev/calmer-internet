@@ -1,5 +1,11 @@
 // Settings
 settings = {}
+// Button clicked
+chrome.browserAction.onClicked.addListener(function (tab){
+    chrome.runtime.openOptionsPage();
+});
+
+
 let getting = chrome.storage.sync.get([
     "YTHomeRedirect",
 
