@@ -42,26 +42,26 @@ function getElementsToRemove(){
     // YouTube
     if (window.location.hostname === "www.youtube.com" || window.location.hostname === "m.youtube.com"){
 
-        if(settings["YTHomeLinks"]){
+        if(!settings["YTHomeLinks"]){
             elementsToRemove["homeLinks"] = document.querySelectorAll("a[href='/']")
         }
-        if(settings["YTExploreLinks"]){
+        if(!settings["YTExploreLinks"]){
             elementsToRemove["exploreLinks"] = document.querySelectorAll("a[href='/feed/explore']")
         }
-        if(settings["YTComments"]){
+        if(!settings["YTComments"]){
             elementsToRemove["comments"] = document.getElementsByClassName("ytd-comments")
             elementsToRemove["commentsMobile"] = document.getElementsByTagName("ytm-comments-entry-point-header-renderer")
         }
-        if(settings["YTWatchNext"]){
+        if(!settings["YTWatchNext"]){
             elementsToRemove["watchNext"] = document.getElementsByClassName("ytd-watch-next-secondary-results-renderer")
             elementsToRemove["watchNextMobile"] = document.querySelectorAll("ytm-item-section-renderer[section-identifier='related-items']")
         }
-        if(settings["YTLiveChat"]){
+        if(!settings["YTLiveChat"]){
             elementsToRemove["liveChat"] = document.getElementsByTagName("ytd-live-chat-frame")
         }
         // Elements that might throw undefined errors
         try{
-            if(settings["YTHomeLinks"]) {
+            if(!settings["YTHomeLinks"]) {
                 elementsToRemove["homeMobile"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-w2w")[0].parentElement]
                 elementsToRemove["trendingMobile"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-trending")[0].parentElement]
             }
@@ -73,31 +73,31 @@ function getElementsToRemove(){
 
     //Twitter
     if (window.location.hostname === "twitter.com" || window.location.hostname === "mobile.twitter.com"){
-        if(settings["TwitterTrendingBar"]){
+        if(!settings["TwitterTrendingBar"]){
             elementsToRemove["trendingBar"] = document.querySelectorAll("div[aria-label='Timeline: Trending now']")
         }
-        if(settings["TwitterExploreLinks"]){
+        if(!settings["TwitterExploreLinks"]){
             elementsToRemove["exploreLinks"] = document.querySelectorAll("a[href='/explore']")
         }
-        if(settings["TwitterWhoToFollow"]){
+        if(!settings["TwitterWhoToFollow"]){
             elementsToRemove["miscStyling"] = document.getElementsByClassName("css-1dbjc4n r-1867qdf r-1phboty r-rs99b7 r-1ifxtd0 r-1bro5k0 r-1udh08x")
             elementsToRemove["whoToFollow"] = document.querySelectorAll("aside[aria-label='Who to follow']")
         }
-        if(settings["TwitterTopics"]){
+        if(!settings["TwitterTopics"]){
             elementsToRemove["topics"] = document.querySelectorAll("div[aria-label='Timeline: ']")
         }
     }
 
     //Instagram
     if (window.location.hostname === "www.instagram.com"){
-        if(settings["InstaComments"]){
+        if(!settings["InstaComments"]){
             elementsToRemove["comments"] = document.getElementsByClassName("Mr508 ")
         }
 
         // Elements that might throw undefined errors
 
         //Explore Links
-        if(settings["InstaExploreLinks"]) {
+        if(!settings["InstaExploreLinks"]) {
 
             try {
                 exploreLinkParents = []
@@ -113,7 +113,7 @@ function getElementsToRemove(){
             }
         }
         // Comments below posts in feed
-        if(settings["InstaFeedComments"]) {
+        if(!settings["InstaFeedComments"]) {
             try {
                 feedComments = []
                 for (element of document.getElementsByClassName("r8ZrO")) {

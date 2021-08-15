@@ -19,7 +19,7 @@ let getting = chrome.storage.sync.get([
 // YouTube
     chrome.webRequest.onBeforeRequest.addListener(
         function (details) {
-            if(settings["YTHomeRedirect"]) {
+            if(!settings["YTHomeRedirect"]) {
                 return {redirectUrl: "https://youtube.com/feed/subscriptions"};
             }
         },
@@ -35,7 +35,7 @@ let getting = chrome.storage.sync.get([
 // Twitter
     chrome.webRequest.onBeforeRequest.addListener(
         function (details) {
-            if(settings["TwitterExploreRedirect"]) {
+            if(!settings["TwitterExploreRedirect"]) {
                 return {redirectUrl: "https://twitter.com/"};
             }
         },
@@ -52,7 +52,7 @@ let getting = chrome.storage.sync.get([
 // Instagram
     chrome.webRequest.onBeforeRequest.addListener(
         function (details) {
-            if(settings["InstaExploreRedirect"]) {
+            if(!settings["InstaExploreRedirect"]) {
                 return {redirectUrl: "https://instagram.com/"};
             }
         },
