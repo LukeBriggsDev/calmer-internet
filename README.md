@@ -22,3 +22,7 @@ A web extension that hides the elements of web pages that are best off hidden
 - Explore people links
 - Comments below posts in feed
 - Comments in posts
+
+<a href="https://chrome.google.com/webstore/detail/calmer-internet/eafehkefjngkemmnfplgddemgpcjlldb"><img src=".promo/chrome_web_store.png" alt="chrome" /></a>
+
+<a href="https://addons.mozilla.org/firefox/addon/calmer-internet/"><img src=".promo/firefox_addon.png" alt="firefox" /></a>
