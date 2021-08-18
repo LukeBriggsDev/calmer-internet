@@ -10,6 +10,7 @@ A web extension that hides the elements of web pages that are best off hidden
 - Redirect home page to subscriptions
 - Watch next section
 - Live Chat
+- End screen video wall
 
 ## Twitter elements:
 - Trending bar
