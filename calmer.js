@@ -8,6 +8,7 @@ let getting = chrome.storage.sync.get([
     "YTComments",
     "YTWatchNext",
     "YTLiveChat",
+    "YTEndScreenVideoWall",
 
     "TwitterTrendingBar",
     "TwitterExploreLinks",
@@ -25,6 +26,7 @@ let getting = chrome.storage.sync.get([
         "YTComments": result.YTComments,
         "YTWatchNext": result.YTWatchNext,
         "YTLiveChat": result.YTLiveChat,
+        "YTEndScreenVideoWall": result.YTEndScreenVideoWall,
 
         "TwitterTrendingBar": result.TwitterTrendingBar,
         "TwitterExploreLinks": result.TwitterExploreLinks,
@@ -59,6 +61,10 @@ function getElementsToRemove(){
         if(!settings["YTLiveChat"]){
             elementsToRemove["liveChat"] = document.getElementsByTagName("ytd-live-chat-frame")
         }
+        if(!settings["YTEndScreenVideoWall"]){
+            elementsToRemove["endScreenVideoWall"] = document.getElementsByClassName("videowall-endscreen")
+        }
+
         // Elements that might throw undefined errors
         try{
             if(!settings["YTHomeLinks"]) {

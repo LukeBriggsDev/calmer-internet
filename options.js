@@ -7,6 +7,7 @@ function saveOptions(e) {
         YTComments: document.querySelector("#YTComments").checked,
         YTWatchNext: document.querySelector("#YTWatchNext").checked,
         YTLiveChat: document.querySelector("#YTLiveChat").checked,
+        YTEndScreenVideoWall: document.querySelector("#YTEndScreenVideoWall").checked,
 
         TwitterTrendingBar: document.querySelector("#TwitterTrendingBar").checked,
         TwitterExploreLinks: document.querySelector("#TwitterExploreLinks").checked,
@@ -30,6 +31,7 @@ function restoreOptions() {
         document.querySelector("#YTComments").checked = result.YTComments;
         document.querySelector("#YTWatchNext").checked = result.YTWatchNext;
         document.querySelector("#YTLiveChat").checked = result.YTLiveChat;
+        document.querySelector("#YTEndScreenVideoWall").checked = result.YTEndScreenVideoWall
 
         document.querySelector("#TwitterTrendingBar").checked = result.TwitterTrendingBar;
         document.querySelector("#TwitterExploreLinks").checked = result.TwitterExploreLinks;
@@ -54,6 +56,7 @@ function restoreOptions() {
         "YTComments",
         "YTWatchNext",
         "YTLiveChat",
+        "YTEndScreenVideoWall",
 
         "TwitterTrendingBar",
         "TwitterExploreLinks",
