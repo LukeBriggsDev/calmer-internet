@@ -31,7 +31,9 @@ let getting = chrome.storage.sync.get([
         },
         {
             urls: [
-                "*://*.youtube.com/"
+                "*://youtube.com/",
+                "*://www.youtube.com/",
+                "*://m.youtube.com/"
             ],
             types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "xmlhttprequest", "other"]
         },
