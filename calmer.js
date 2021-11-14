@@ -80,7 +80,7 @@ function getElementsToRemove(){
     //Twitter
     if (window.location.hostname === "twitter.com" || window.location.hostname === "mobile.twitter.com"){
         if(!settings["TwitterTrendingBar"]){
-            elementsToRemove["trendingBar"] = document.querySelectorAll("div[data-testid='sidebarColumn'] > div > div:nth-child(2) > div > div > div > div:nth-child(3)")
+            elementsToRemove["trendingBar"] = document.querySelectorAll("div[data-testid='sidebarColumn'] > div > div:nth-child(2) > div > div > div > div:nth-child(2)")
         }
         if(!settings["TwitterExploreLinks"]){
             elementsToRemove["exploreLinks"] = document.querySelectorAll("a[href='/explore']")
