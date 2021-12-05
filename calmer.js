@@ -9,6 +9,7 @@ let getting = chrome.storage.sync.get([
     "YTWatchNext",
     "YTLiveChat",
     "YTEndScreenVideoWall",
+    "YTSearchSuggestions",
 
     "TwitterTrendingBar",
     "TwitterExploreLinks",
@@ -27,6 +28,7 @@ let getting = chrome.storage.sync.get([
         "YTWatchNext": result.YTWatchNext,
         "YTLiveChat": result.YTLiveChat,
         "YTEndScreenVideoWall": result.YTEndScreenVideoWall,
+        "YTSearchSuggestions": result.YTSearchSuggestions,
 
         "TwitterTrendingBar": result.TwitterTrendingBar,
         "TwitterExploreLinks": result.TwitterExploreLinks,
@@ -63,6 +65,9 @@ function getElementsToRemove(){
         }
         if(!settings["YTEndScreenVideoWall"]){
             elementsToRemove["endScreenVideoWall"] = document.getElementsByClassName("videowall-endscreen")
+        }
+        if(!settings["YTSearchSuggestions"]){
+            elementsToRemove["searchSuggestions"] = document.querySelectorAll("ytd-shelf-renderer>div[id='dismissible']")
         }
 
         // Elements that might throw undefined errors
