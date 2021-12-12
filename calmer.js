@@ -66,9 +66,6 @@ function getElementsToRemove(){
         if(!settings["YTEndScreenVideoWall"]){
             elementsToRemove["endScreenVideoWall"] = document.getElementsByClassName("videowall-endscreen")
         }
-        if(!settings["YTSearchSuggestions"]){
-            elementsToRemove["searchSuggestions"] = document.querySelectorAll("ytd-shelf-renderer>div[id='dismissible']")
-        }
 
         // Elements that might throw undefined errors
         try{
@@ -79,6 +76,18 @@ function getElementsToRemove(){
         }
         catch(e){
 
+        }
+        try {
+            if(!settings["YTSearchSuggestions"]) {
+                console.log(window.location.href)
+                if (window.location.href !== "https://www.youtube.com/feed/subscriptions") {
+                    elementsToRemove["searchSuggestions"] = document.querySelectorAll("ytd-shelf-renderer>div[id='dismissible']")
+
+                }
+            }
+        }
+        catch (e) {
+            
         }
     }
 
