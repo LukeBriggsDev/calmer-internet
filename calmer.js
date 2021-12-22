@@ -80,7 +80,7 @@ function getElementsToRemove(){
         try {
             if(!settings["YTSearchSuggestions"]) {
                 console.log(window.location.href)
-                if (window.location.href !== "https://www.youtube.com/feed/subscriptions") {
+                if (window.location.href !== "https://www.youtube.com/feed/subscriptions" && ! window.location.href.startsWith("https://www.youtube.com/c/") && ! window.location.href.startsWith("https://www.youtube.com/channel/")) {
                     elementsToRemove["searchSuggestions"] = document.querySelectorAll("ytd-shelf-renderer>div[id='dismissible']")
 
                 }
