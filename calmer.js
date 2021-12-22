@@ -79,10 +79,9 @@ function getElementsToRemove(){
         }
         try {
             if(!settings["YTSearchSuggestions"]) {
-                console.log(window.location.href)
-                if (window.location.href !== "https://www.youtube.com/feed/subscriptions" && ! window.location.href.startsWith("https://www.youtube.com/c/") && ! window.location.href.startsWith("https://www.youtube.com/channel/")) {
-                    elementsToRemove["searchSuggestions"] = document.querySelectorAll("ytd-shelf-renderer>div[id='dismissible']")
-
+                if (window.location.href.startsWith("https://www.youtube.com/results")) {
+                    let elements = document.querySelectorAll("ytd-search>div[id='container']>ytd-two-column-search-results-renderer>div[id='primary']>ytd-section-list-renderer>div[id='contents']>ytd-item-section-renderer>div[id='contents']>ytd-shelf-renderer>div[id='dismissible']");
+                    elementsToRemove["searchSuggestions"] = elements
                 }
             }
         }
