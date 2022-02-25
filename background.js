@@ -6,6 +6,7 @@ chrome.browserAction.onClicked.addListener(function (tab){
 });
 
 
+// noinspection JSVoidFunctionReturnValueUsed
 let getting = chrome.storage.sync.get([
     "YTHomeRedirect",
 

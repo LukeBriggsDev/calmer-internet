@@ -2,6 +2,7 @@ function saveOptions(e) {
     e.preventDefault();
     chrome.storage.sync.set({
         YTHomeLinks: document.querySelector("#YTHomeLinks").checked,
+        YTShortsLinks: document.querySelector("#YTShortsLinks").checked,
         YTHomeRedirect: document.querySelector("#YTHomeRedirect").checked,
         YTExploreLinks: document.querySelector("#YTExploreLinks").checked,
         YTComments: document.querySelector("#YTComments").checked,
@@ -27,6 +28,7 @@ function restoreOptions() {
 
     function setCurrentChoices(result) {
         document.querySelector("#YTHomeLinks").checked = result.YTHomeLinks;
+        document.querySelector("#YTShortsLinks").checked = result.YTShortsLinks;
         document.querySelector("#YTHomeRedirect").checked = result.YTHomeRedirect;
         document.querySelector("#YTExploreLinks").checked = result.YTExploreLinks;
         document.querySelector("#YTComments").checked = result.YTComments;
@@ -51,8 +53,9 @@ function restoreOptions() {
         console.log(`Error: ${error}`);
     }
 
-    let getting = chrome.storage.sync.get([
+chrome.storage.sync.get([
         "YTHomeLinks",
+        "YTShortsLinks",
         "YTHomeRedirect",
         "YTExploreLinks",
         "YTComments",

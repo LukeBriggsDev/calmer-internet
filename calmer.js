@@ -2,8 +2,10 @@ console.log("LOADED CALMER INTERNET ON " + window.location.hostname);
 // Settings
 settings = {}
 
+// noinspection JSVoidFunctionReturnValueUsed
 let getting = chrome.storage.sync.get([
     "YTHomeLinks",
+    "YTShortsLinks",
     "YTExploreLinks",
     "YTComments",
     "YTWatchNext",
@@ -19,9 +21,10 @@ let getting = chrome.storage.sync.get([
     "InstaComments",
     "InstaExploreLinks",
     "InstaFeedComments"
-], function (result){
+], function (result) {
     settings = {
         "YTHomeLinks": result.YTHomeLinks,
+        "YTShortsLinks": result.YTShortsLinks,
         "YTHomeRedirect": result.YTHomeRedirect,
         "YTExploreLinks": result.YTExploreLinks,
         "YTComments": result.YTComments,
@@ -49,6 +52,9 @@ function getElementsToRemove(){
         if(!settings["YTHomeLinks"]){
             elementsToRemove["homeLinks"] = document.querySelectorAll("a[href='/']")
         }
+        if(!settings["YTShortsLinks"]){
+            elementsToRemove["shortsLinks"] = document.querySelectorAll("a[title='Shorts']")
+        }
         if(!settings["YTExploreLinks"]){
             elementsToRemove["exploreLinks"] = document.querySelectorAll("a[href='/feed/explore']")
         }
@@ -74,20 +80,19 @@ function getElementsToRemove(){
                 elementsToRemove["trendingMobile"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-trending")[0].parentElement]
             }
         }
-        catch(e){
-
-        }
+        catch(e){}
+        try {
+            if(!settings["YTShortsLinks"]) {
+                elementsToRemove["shortsLinks"] = [document.getElementsByClassName("pivot-bar-item-tab pivot-shorts")[0].parentElement]
+            }
+        } catch(e){}
         try {
             if(!settings["YTSearchSuggestions"]) {
                 if (window.location.href.startsWith("https://www.youtube.com/results")) {
-                    let elements = document.querySelectorAll("ytd-search>div[id='container']>ytd-two-column-search-results-renderer>div[id='primary']>ytd-section-list-renderer>div[id='contents']>ytd-item-section-renderer>div[id='contents']>ytd-shelf-renderer>div[id='dismissible']");
-                    elementsToRemove["searchSuggestions"] = elements
+                    elementsToRemove["searchSuggestions"] = document.querySelectorAll("ytd-search>div[id='container']>ytd-two-column-search-results-renderer>div[id='primary']>ytd-section-list-renderer>div[id='contents']>ytd-item-section-renderer>div[id='contents']>ytd-shelf-renderer>div[id='dismissible']")
                 }
             }
-        }
-        catch (e) {
-            
-        }
+        } catch (e) {}
     }
 
     //Twitter
