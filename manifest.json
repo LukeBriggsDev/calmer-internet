@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Calmer Internet",
   "version": "1.2.5",
   "browser_specific_settings": {
@@ -7,7 +7,7 @@
       "id": "calmerinternet@lukebriggs.dev"
     }
   },
-  "browser_action": {
+  "action": {
     "default_icon": {
       "16": "icons/16.png",
       "24": "icons/24.png",
@@ -30,15 +30,34 @@
   }
   ],
   "background": {
-    "scripts":["background.js"]
+    "service_worker": "background.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "youtube",
+      "enabled": true,
+      "path": "rules/youtube.json"
+    },
+    {
+      "id": "twitter",
+      "enabled": true,
+      "path": "rules/twitter.json"
+    },
+    {
+      "id": "instagram",
+      "enabled": true,
+      "path": "rules/instagram.json"
+    }]
   },
   "permissions": [
+    "storage",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
+  ],
+  "host_permissions": [
     "*://*.youtube.com/*",
     "*://*.twitter.com/*", "*://twitter.com/*",
-    "*://*.instagram.com/*",
-    "storage",
-    "webRequest",
-    "webRequestBlocking"
+    "*://*.instagram.com/*"
   ],
   "description": "Provides a calmer internet experience. Removes comments and various recommendation elements from Twitter, YouTube, Instagram.",
   "options_ui": {

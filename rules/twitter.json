@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "priority": 1,
+        "action": { "type": "redirect", "redirect": { "url": "https://twitter.com/home" }},
+        "condition": {
+            "regexFilter":  "^.*://(www\\.|m.|)twitter.com/explore",
+            "resourceTypes": ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "xmlhttprequest", "other"]
+        }
+    }
+]

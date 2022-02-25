@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "priority": 1,
+        "action": { "type": "redirect", "redirect": { "url": "https://instagram.com/" }},
+        "condition": {
+            "regexFilter":  "^.*://(www\\.|m.|)instagram.com/explore.*$",
+            "resourceTypes": ["main_frame"]
+        }
+    }
+]
