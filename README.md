@@ -47,4 +47,7 @@ This extension strips away all these comments, recommendations and promotions le
 
 [Edge](https://microsoftedge.microsoft.com/addons/detail/calmer-internet/fodnejjpkelloeegkfgejifhaifnpded)
 
+[Safari](https://github.com/LukeBriggsDev/calmer-internet/releases/download/v1.3.0/CalmerInternet.v1.3.0.dmg)
+**NB: Redirects not available in Safari due to technical limitations**
+
 [Source Code](https://github.com/LukeBriggsDev/calmer-internet/)
